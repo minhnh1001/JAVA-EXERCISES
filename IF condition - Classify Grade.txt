@@ -1,0 +1,46 @@
+/*
+Exercise 1: Write a Java program that determines a student’s grade.
+The program will read three types of scores(quiz, mid-term, and final scores) and determine the grade based on the following rules:
+-if the average score >=90% =>grade=A
+-if the average score >= 70% and <90% => grade=B
+-if the average score>=50% and <70% =>grade=C
+-if the average score<50% =>grade=F
+See the example output below:
+
+Quiz score: 80
+
+Mid-term score: 68
+
+Final score: 90
+
+Your grade is B.
+*/
+
+package pjoject;
+
+import java.util.*;
+
+public class Exercises{
+
+public static void main(String[] args)
+{
+	float q, m, f;
+	float avg;
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter Quize score: ");
+	q = sc.nextFloat();
+	System.out.print("Enter Mid-term score: ");
+	m = sc.nextFloat();
+	System.out.print("Enter Final score: ");
+	f = sc.nextFloat();
+	
+	avg=(q+m+f)/3;
+	
+	if(avg>=90) System.out.println("Your Grate is A");
+	else if(avg>=70 && avg<90) System.out.println("Your Grate is B");
+	else if(avg>=50 && avg<70) System.out.println("Your Grate is C");
+	else if(avg<50) System.out.println("Your Grate is F");
+	else System.out.println("INVALID");
+}
+}
