@@ -1,0 +1,24 @@
+/*Exercise 2: Write Java program to generate a random number between 1 to 6.
+To generate a random number, you can use the Random class of java.util package.
+ You may use the abs() method of Math class to make sure you can get only a positive number.*/
+
+package pjoject;
+
+import java.util.*;
+
+public class GenerateRandomNumber{
+
+public static void main(String[] args)
+{
+	random();
+}
+
+static void random()
+{
+	int a;
+	Random ran = new Random();
+	a = 1+ Math.abs(ran.nextInt(6)); // 1=min; 6: nextInt(x): [0;x)
+	System.out.println("The result: "+a);
+}
+
+}
