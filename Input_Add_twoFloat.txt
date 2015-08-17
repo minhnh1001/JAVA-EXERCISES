@@ -1,0 +1,42 @@
+/*
+Exercise 1: Write Java program to allow the user to input two float values and then the program adds the two values together.
+ The result will be assigned to the first variable.
+
+Enter value a:12.5
+
+The value of a before adding is 12.5.
+
+Enter value b:34.9
+
+The value of a after adding is 47.4.
+  the two values together. The result will be assigned to the first variable.
+
+Enter value a:12.5
+
+The value of a before adding is 12.5.
+
+Enter value b:34.9
+
+The value of a after adding is 47.4..
+*/
+
+package pjoject;
+
+import java.util.*;
+
+public class Input_AddNumber{
+
+public static void main(String[] args)
+{
+	float a, b;
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter a = ");
+	a = sc.nextFloat();
+	System.out.print("Enter b = ");
+	b = sc.nextFloat();
+	System.out.println("BEFORE Adding, The value of a = " + a);
+	a=a+b;
+	System.out.println("AFTER Adding, The value of a = " + a);
+	
+}
+}
