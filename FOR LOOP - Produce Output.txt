@@ -1,0 +1,35 @@
+/*
+Exercise 1: Write a Java program by using two for loops to produce the output shown below:
+
+
+*******
+
+******
+
+*****
+
+****
+
+***
+
+**
+
+*
+*/
+
+package pjoject;
+
+public class Exercises
+{
+
+public static void main(String[] args)
+{
+for (int i=0; i<=6; i++)
+{
+	for(int j=1;j<=7-i;j++) System.out.print("*");
+	System.out.println("");
+}
+
+
+}
+}
