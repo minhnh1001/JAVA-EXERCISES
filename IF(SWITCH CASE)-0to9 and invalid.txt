@@ -1,0 +1,42 @@
+/*
+Exercise 1: Write a Java program to detect key presses.
+If the user pressed number keys( from 0 to 9), the program will tell the number that is pressed,  otherwise, program will show "Not allowed".
+*/
+
+package pjoject;
+
+import java.io.IOException;
+
+
+public class Exercises{
+
+
+public static void main(String[] args)
+{
+ char c = 0;
+ 
+ System.out.print("Press a number key: ");
+ 
+ try {
+	c=(char) System.in.read();
+} catch (IOException e) {}
+ 
+ switch(c)
+ {
+ case '0': System.out.println("You Press 0."); break;
+ case '1': System.out.println("You Press 1."); break;
+ case '2': System.out.println("You Press 2."); break;
+ case '3': System.out.println("You Press 3."); break;
+ case '4': System.out.println("You Press 4."); break;
+ case '5': System.out.println("You Press 5."); break;
+ case '6': System.out.println("You Press 6."); break;
+ case '7': System.out.println("You Press 7."); break;
+ case '8': System.out.println("You Press 8."); break;
+ case '9': System.out.println("You Press 9."); break;
+ default: System.out.println("Not Allowed!");
+
+ }
+ 
+ 
+}
+}
