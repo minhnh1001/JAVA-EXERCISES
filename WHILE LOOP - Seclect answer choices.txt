@@ -1,0 +1,58 @@
+/*
+Write Java program to prompt the user to choose the correct answer from a list of answer choices of a question.
+
+The user can choose to continue answering the question or stop answering it. See the example below:
+
+What is the command keyword to exit a loop in Java?
+a. int
+b. continue
+c. break
+d. exit
+Enter your choice: b
+
+Incorrect!
+
+Again? press y to continue:
+*/
+
+package pjoject;
+
+import java.io.*;
+
+
+public class Exercises
+{
+
+public static void main(String[] args)
+{
+	String choice;
+	String again = "y"; 
+	
+	
+	try {
+		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+		
+	while (again.compareTo("y")==0)
+	{
+	System.out.println("What is the command keyword to exit a loop in Java?");
+	System.out.println("a.quit");
+	System.out.println("b.continue");
+	System.out.println("c.break");
+	System.out.println("d.exit");
+		
+		System.out.print("Enter your Choice: ");
+		choice =buf.readLine();
+		if (choice.compareTo("c")==0) {System.out.println("Congratulation!"); }
+		else if (choice.compareTo("a")==0 || choice.compareTo("b")==0 || choice.compareTo("d")==0 ){ System.out.println("Incorrect!"); }
+		else {System.out.println("Invalid!");}
+		
+		System.out.println("Again? press y to continue:");
+		again =buf.readLine();
+	
+	} 
+	
+	} catch (IOException e){}
+	
+	
+}
+}
