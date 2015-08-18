@@ -1,0 +1,42 @@
+/*
+Exercise 2: Write a Java program that allows the user to choose the correct answer of a question.
+See the example below:
+
+What is the correct way to declare a variable to store an integer value in Java?
+a. int 1x=10;
+b. int x=10;
+c. float x=10.0f;
+d. string x="10";
+Enter your choice: b*/
+
+package pjoject;
+
+import java.io.*;
+
+public class Exercises
+{
+	public static void main(String[] args)
+	{
+	   char c=0;
+	   System.out.println("What is the correct way to declare a variable to store an integer value in Java?");
+	   System.out.println("a. int 1x=10");
+	   System.out.println("b. int x=10");
+	   System.out.println("c. float x=10.0f");
+	   System.out.println("d. string x='10'");
+	   System.out.print("Enter your choice:");
+	   
+	   try {
+			c=(char)System.in.read();
+		} catch (IOException e) {}
+	
+	   switch(c)
+	   {
+	   case 'a': System.out.println("Invalid choice!"); break;
+	   case 'b': System.out.println("Congratulation!"); break;
+	   case 'c': System.out.println("Invalid choice!"); break;
+	   case 'd': System.out.println("Invalid choice!"); break;
+	   default: System.out.println("BAD choice!"); break;
+	   }
+
+	}
+}
