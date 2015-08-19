@@ -1,0 +1,37 @@
+/*
+Exercise 1: By using the sequential search algorithm, write a Java program to search for an element of an integer array of 10 elements.
+*/
+
+package pjoject;
+
+import java.util.*;
+
+public class Exercises
+{
+	public static void main(String[] args){
+	int a,b;
+		
+		int arr[] = {11, 99, 55, 33, 44 , 7, 9, 105, 100, 97};
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the element to fine: ");
+		a = sc.nextInt();
+		b = found(arr, a);
+		
+		if (b==-1) System.out.println("Not Found!");
+		else System.out.println("Found, the element at position: "+b);
+	}
+
+	static int found(int []arr, int a)
+	{
+		int b=-1;
+		
+		for (int i=0; i< arr.length; i++)
+		{
+			if (arr[i]==a) b=i; 
+		}
+		
+		return b;
+	}
+
+}
