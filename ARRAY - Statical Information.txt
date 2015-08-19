@@ -1,0 +1,110 @@
+/*
+Exercise: Write a Java program to answer about the statistical information such as arithmetic mean, median, mode, 
+and standard deviation of an integer data set. The data points are input by the user from keyboard. 
+This program will display the output similar to the one shown below:
+
+[0]: 23
+[1]: 23
+[2]: 33
+[3]: 23
+[4]: 43
+[5]: 43
+[6]: 43
+[7]: 41
+[8]: 23
+[9]: 23
+[10]: 32
+[11]: 23
+Statistical Information:
+=================================
+Arithmetic mean: 31.083334
+Median: 27.5
+Mode: 23
+Standard deviation: 9.149847
+
+If you are not sure about statistical information such as arithmetic mean, median, mode, and standard deviation,
+you will need to read this page: http://math.tutorvista.com/statistics/ungrouped-data.html
+ */
+
+package pjoject;
+
+import java.util.*;
+
+public class Exercises
+{
+	
+	public static void main(String[] args){
+		
+		int n;
+		float mean, median = 0, std;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number of  elements (n>2): "); // Size of array
+		n = sc.nextInt();
+		
+		int[] arr = new int[n];
+		for (int i=0; i<n; i++)   // Input n elements of array
+		{
+			System.out.print("arr["+i+"] = ");
+			arr[i] = sc.nextInt();	
+		}
+		//Sort the array
+		for (int i=0; i<n; i++)
+		{
+			int temp;
+			for (int j=i+1; j<n; j++)
+				if (arr[i]>arr[j])
+				{
+					temp = arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+		}
+		// calculate the mean
+		int sum=0;
+		for (int i=0; i<n; i++)
+		{
+			sum = sum + arr[i];
+		}
+		mean = (float)sum/n;
+		
+		//calculate the median
+		if (n%2!=0) median = arr[n/2];
+		else median = (arr[(n/2)-1]+arr[(n/2)])/(float)2; // Pay attention: The index of array start from 0
+		
+		
+		//calculate the mode
+		int mode = arr[0];
+		int temp =1;
+		int temp2 =1;
+		 for(int i=1;i<arr.length;i++){
+		        if(arr[i-1] == arr[i]){
+		            temp++;
+		        }
+		        else {
+		            temp = 1;
+		        }
+		        if(temp >= temp2){
+		            mode = arr[i];
+		            temp2 = temp;
+		        }
+		    }
+		 // calculus standard deviation
+		 float sumSD = 0;
+		 
+		 for (int i=0; i<n; i++) 
+		 {
+			 sumSD = sumSD + (float) Math.pow(arr[i]-mean, 2);
+		 }
+		 std = (float)Math.sqrt(sumSD/(n-1));
+		 
+		 // Show results
+		 System.out.println("Statistical Information:");
+		 System.out.println("===============================");
+		 System.out.println("Arithmetic mean: "+mean);
+		 System.out.println("Median: "+median);
+		 System.out.println("Mode: "+mode);
+		 System.out.println("Standard deviation: "+std);
+	}
+
+}
