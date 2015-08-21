@@ -74,10 +74,10 @@ public class Exercises
 		stem[i]=arr[i]/10;   // extract stems
 		}
 				 
-		 // Assign Frequency
+		 // Assign Frequency to a[k][0] to display
 		 int count = 1;
 		 int countn =1;
-		 int k=0;
+		 int k=0; // count line to display and also size of a[k][]
 		 int a[][] = new int [n][n];
 		 
 		 for (int i=1; i<n; i++)
@@ -88,7 +88,7 @@ public class Exercises
 			}
 		 a[k][0]=countn-1;
 		
-		//Assign stem
+		//Assign stem to a[k][1] to display
 		 int temp = stem[0];
 		 int temp1 = stem[0];
 		k=0;
