@@ -1,0 +1,120 @@
+/*
+Exercise: Write a Java program to display an integer data set in the form of stem and leaf. The data points are input by the user from keyboard. 
+This program will display the output similar to the one shown below:
+
+[0]: 23
+[1]: 23
+[2]: 44
+[3]: 34
+[4]: 34
+[5]: 33
+[6]: 12
+[7]: 25
+[8]: 45
+[9]: 44
+[10]: 34
+[11]: 34
+The sorted array is:
+12 23 23 25 33 34 34 34 34 44 44 45
+Stem and Leaf Display:
+Frequency	Stem	Leaf
+=================================
+1		1	2
+3		2	335
+5		3	34444
+3		4	445
+
+If you are not sure about how to present data set in the form of stem and leaf, you will need to read this page:
+http://staff.argyll.epsb.ca/jreed/comphelpMath/stemleaf.html
+ */
+
+package pjoject;
+
+import java.util.*;
+
+public class Exercises
+{
+	
+	public static void main(String[] args){
+		
+		int n;
+					
+		Scanner sc = new Scanner(System.in);
+		System.out.println("PRESENT THE ARRAY OF POSITIVE INTEGERS IN STEM AND LEAF FORM ! "); 
+		System.out.print("Enter number of  elements (n>1): "); // Size of array
+		n = sc.nextInt();
+		
+		// Input n elements of array
+		int[] arr = new int[n];
+		for (int i=0; i<n; i++)   
+		{
+			System.out.print("arr["+i+"] = ");
+			arr[i] = sc.nextInt();	
+		}
+		
+		//Sort the array
+		for (int i=0; i<n; i++)
+		{
+			int temp;
+			for (int j=i+1; j<n; j++)
+				if (arr[i]>arr[j])
+				{
+					temp = arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+		}
+		
+		//Extract stems and leafs 
+		int leaf[] = new int [n];
+		int stem[] = new int [n];
+		for (int i=0; i<n; i++)
+		{
+		leaf[i]=arr[i]%10;	 // extract leafs
+		stem[i]=arr[i]/10;   // extract stems
+		}
+				 
+		 // Assign Frequency
+		 int count = 1;
+		 int countn =1;
+		 int k=0;
+		 int a[][] = new int [n][n];
+		 
+		 for (int i=1; i<n; i++)
+			{	 
+			 if (stem[i]==stem[i-1]){ count++;}
+			 if (stem[i]==stem[n-1]){countn++;}
+			 if (stem[i]>stem[i-1]) {a[k][0]=count;count = 1;k++;}
+			}
+		 a[k][0]=countn-1;
+		
+		//Assign stem
+		 int temp = stem[0];
+		 int temp1 = stem[0];
+		k=0;
+		a[k][1]=stem[0]; 
+		 for (int i=1; i<n ; i++){
+			
+			if (stem[i-1]!=stem[i]) {temp=stem[i];}
+			 if(temp>temp1) {k++; a[k][1]=temp; temp1=temp;}
+			
+		 } 
+		 
+		// Show results
+				 System.out.println("The sorted array is:");
+				 for (int i=0; i<n; i++) System.out.print(arr[i]+"\t");
+				 System.out.println("\nStem and Leaf Display: ");
+				 System.out.println("Frequency\tStem\tLeaf ");
+				 System.out.println("=================================");
+	
+		// print Frequency+Stem+Leaf
+			int t=0;
+		 for (int j=0; j<=k; j++) 
+		 {	
+			System.out.print(a[j][0]+"\t"+"\t"+a[j][1]+"\t");  // print F+S
+			for (int i=0; i<a[j][0]; i++) {System.out.print(leaf[t]); t++;} // print L
+			System.out.println();
+		 }
+		 
+	}
+}
