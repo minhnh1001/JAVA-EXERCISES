@@ -1,0 +1,16 @@
+/*
+How to find hostname from IP Address?
+ */
+
+package ambitious;
+
+import java.net.InetAddress;
+
+public class Main {
+  public static void main(String[] argv) throws Exception {
+
+    InetAddress addr = InetAddress.getByName("206.190.36.105");
+    System.out.println("Host name is: "+addr.getHostName());
+    System.out.println("Ip address is: "+ addr.getHostAddress());
+  }
+}
