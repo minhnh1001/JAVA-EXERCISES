@@ -20,7 +20,23 @@ Print the answer to each test case in seperate lines.
 
 
 import java.util.*;
-
+/*
+public class JavaLopps {
+	int temp=0;
+	static int temp2=0;
+	static void printResultst(int a, int b,int n) {
+		for(int i=0; i<n; i++){
+			int temp=0;
+			temp2+=(int)(Math.pow(2.0,i)*b);
+			/*for(int j=0; j<=i; j++){
+				temp=temp+(int)(Math.pow(2.0,j)*b);
+			}*/
+			temp=temp2+a;
+            System.out.print(temp + " ");	
+		}
+		System.out.println("");
+	}
+*/
 
 public class JavaLopps {
     static void printResults(int a, int b, int n)
