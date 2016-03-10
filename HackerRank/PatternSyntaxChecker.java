@@ -17,6 +17,7 @@ public class PatternSyntaxChecker{
 		
 		 Scanner in = new Scanner(System.in);
 	      int testCases = Integer.parseInt(in.nextLine());
+	       // or int testCases = in.nextInt(); String test = in.nextLine();
 	      while(testCases>0){
 	         String pattern = in.nextLine();
 	             //Write your code
